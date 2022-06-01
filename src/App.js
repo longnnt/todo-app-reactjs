@@ -2,13 +2,15 @@ import './App.css';
 import { useEffect, useRef, useState } from 'react';
 import { AiFillDelete, AiFillEdit, AiOutlineCheckSquare } from 'react-icons/ai';
 function App() {
-  const [listTodo, setListTodo] = useState(
-    [...JSON.parse(localStorage.getItem('listTodo'))] || [
-      'Banana',
-      'Apple',
-      'Watermelon',
-    ],
-  );
+  const getLocalItems = () => {
+    let list = localStorage.getItem('listTodo');
+    if (list) {
+      return JSON.parse(localStorage.getItem('listTodo'));
+    } else {
+      return [];
+    }
+  };
+  const [listTodo, setListTodo] = useState(getLocalItems());
   const [todoInput, setTodoInput] = useState('');
   const [editTodo, setEditTodo] = useState('');
   const [isChecked, setIsChecked] = useState([]);
