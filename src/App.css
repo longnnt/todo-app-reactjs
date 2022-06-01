@@ -1,0 +1,117 @@
+.App {
+  background-color: #ffcc8f;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  margin: 0;
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.todo-app {
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 20px;
+  position: relative;
+  width: 340px;
+}
+.show-form {
+  display: block;
+  margin-bottom: 10px;
+}
+.hide-form {
+  display: none;
+}
+.btn-submit {
+  padding: 10px 20px;
+  background-color: #3bacb6;
+  border-radius: 2px;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+}
+.btn-submit:hover {
+  background-color: #0099a7;
+}
+.input-todo {
+  width: 268px;
+  height: 30px;
+  line-height: 30px;
+  outline: none;
+}
+
+@keyframes left-to-right {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+
+.list-item {
+  height: 50px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 20px;
+  background-color: #c2ded1;
+  border-bottom: 1px solid rgb(190, 190, 190);
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  transform: translateX(-100%);
+  visibility: hidden;
+  animation: left-to-right 0.45s ease-in forwards;
+}
+@keyframes right-over {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+.list-icon {
+  display: flex;
+  align-items: center;
+}
+.icon-edit {
+  margin-right: 10px;
+  cursor: pointer;
+}
+.icon-delete {
+  cursor: pointer;
+}
+.checked {
+  text-decoration: line-through;
+}
+.not-checked {
+  text-decoration: none;
+}
+.list-add {
+  width: 80px;
+  height: 80px;
+  background-color: rgb(59, 172, 182, 0.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 40%;
+  font-size: 30px;
+  bottom: -12%;
+  user-select: none;
+}
